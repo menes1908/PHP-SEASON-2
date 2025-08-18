@@ -171,14 +171,14 @@ if(isset($_POST["btnRegister"])){
 
                     </select><span class="error"> <?php echo $preffixErr?> </span>
 
-                    <input type="text" name="seven_digit" value="<?php $seven_digit;?>" maxlength="7" placeholder= "Other seven digit" onkeypress='return isNumberKey(event)'><span class="error"> <?php echo $seven_digitErr?> </span>
+                    <input type="text" name="seven_digit" value="<?php echo $seven_digit;?>" maxlength="7" placeholder= "Other seven digit" onkeypress='return isNumberKey(event)'><span class="error"> <?php echo $seven_digitErr?> </span>
                 </td>
             </tr>
 
 
             <tr>
                 <td>
-                    <input type="text" name="email" value="" placeholder= "Email"> <span class="error"> <?php echo $emailErr?> </span>
+                    <input type="text" name="email" value="<?php echo $email;?>" placeholder= "Email"> <span class="error"> <?php echo $emailErr?> </span>
                 
                 </td>
             </tr>
