@@ -28,4 +28,18 @@ if (mysqli_connect_errno()) {
         text-decoration: none;
     }
 
+    .btn-update{
+        font-family: Arial;
+        color: #ffffff;
+        font-size: 15px;
+        background: #005eff;
+        padding: 10px 20px 10px 10px;
+        text-decoration: none;
+    }
+
+    .btn-update:hover{
+        background: #076dad;
+        text-decoration: none;
+    }
+
 </style>

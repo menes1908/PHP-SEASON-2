@@ -20,9 +20,28 @@ setInterval(function(){
 
 </script>
 
+<?php
+if(empty($_GET["getUpdate"])){
+
+
+
+
+
+?>
+
 
 <div id="retriever">
 
 <?php include("retriever.php"); ?>
 
 </div>
+
+
+<?php
+
+}else{
+
+    include("updating_user.php");
+}
+
+?>
