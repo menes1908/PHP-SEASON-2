@@ -25,7 +25,72 @@ $new_first_name = $new_middle_name = $new_last_name = $new_gender = $new_preffix
 
 $new_first_nameErr = $new_middle_nameErr = $new_last_nameErr = $new_genderErr = $new_preffixErr = $new_seven_digitErr = $new_emailErr = "";
 
+if(isset($_POST["btnUpdate"])){
+
+    if(empty($_POST["new_first_name"])){
+        $new_first_nameErr = " This field must not be empty!";
+    }else{
+        $new_first_name = $_POST["new_first_name"];
+        $db_first_name = $new_first_name;
+    }
+
+    if(empty($_POST["new_middle_name"])){
+        $new_middle_nameErr = " This field must not be empty!";
+    }else{
+        $new_middle_name = $_POST["new_middle_name"];
+        $db_middle_name = $new_middle_name;
+    }
+
+    if(empty($_POST["new_last_name"])){
+        $new_last_nameErr = " This field must not be empty!";
+    }else{
+        $new_last_name = $_POST["new_last_name"];
+        $db_last_name = $new_last_name;
+    }
+
+    if(empty($_POST["new_seven_digit"])){
+        $new_seven_digitErr = "This field must not be empty!";
+    }else{
+        $new_seven_digit = $_POST["new_seven_digit"];
+        $db_seven_digit = $new_seven_digit;
+    }
+
+    if(empty($_POST["new_email"])){
+        $new_emailErr = "This field must not be empty!";
+    }else{
+        $new_email = $_POST["new_email"];
+        $db_email = $new_email;
+    }
+
+    $db_gender = $_POST["new_gender"];
+    $db_preffix = $_POST["new_preffix"];
+
+
+    if($new_first_name && $new_middle_name && $new_last_name && $new_seven_digit && $new_email){
+
+        $update_query = mysqli_query($connections, "UPDATE tbl_user SET first_name='$db_first_name', 
+        middle_name='$db_middle_name', 
+        last_name='$db_last_name', 
+        gender='$db_gender', 
+        preffix='$db_preffix', 
+        seven_digit='$db_seven_digit', 
+        email='$db_email' 
+        
+        WHERE id_user='$id_user'");
+
+        $encrypted = md5(rand(1,9));
+
+        echo "<script>window.location.href='viewrecord?$encrypted&&notify=Record has been updated!'; </script>";
+
+    }
+
+}//main if else
+
 ?>
+
+<style>
+    .error{color:red;}
+</style>
 
 <center>
     <br>
@@ -34,7 +99,7 @@ $new_first_nameErr = $new_middle_nameErr = $new_last_nameErr = $new_genderErr = 
 
 <form method="POST">
 
-    <table border="1" width="50%">
+    <table border="0" width="50%">
 
         <tr>
 
@@ -68,7 +133,49 @@ $new_first_nameErr = $new_middle_nameErr = $new_last_nameErr = $new_genderErr = 
 
         </tr>
 
-        
+        <tr>
+
+            <td>
+                <select name="new_preffix" >
+                    <option name="new_preffix" value="0813" <?php if($db_preffix == "0813"){echo "selected"; }?>>0813</option>
+                    <option name="new_preffix" value="0817" <?php if($db_preffix == "0817"){echo "selected"; }?>>0817</option>
+                    <option name="new_preffix" value="0905" <?php if($db_preffix == "0905"){echo "selected"; }?>>0905</option>
+                    <option name="new_preffix" value="0906" <?php if($db_preffix == "0906"){echo "selected"; }?>>0906</option>
+                    <option name="new_preffix" value="0907" <?php if($db_preffix == "0907"){echo "selected"; }?>>0907</option>
+
+
+                </select>
+            <span class="error"><?php echo $new_preffixErr; ?></span>
+
+            &nbsp;
+            <input type="text" name="new_seven_digit" value="<?php echo $db_seven_digit; ?>" maxlength="7">
+            <span class="error"><?php echo $new_seven_digitErr; ?></span>
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>
+
+                <input type="text" name="new_email" value="<?php echo $db_email; ?>">
+                <span class="error"><?php echo $new_emailErr; ?></span>
+
+            </td>
+
+        </tr>
+
+        <tr>
+            <td>
+                <hr>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <input type="submit" name="btnUpdate" value="Update" class="btn-primary">
+            </td>
+        </tr>
 
     </table>
 
