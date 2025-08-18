@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 17, 2025 at 03:49 PM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.0.30
+-- Generation Time: Aug 18, 2025 at 09:39 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -58,7 +58,16 @@ INSERT INTO `tbl_user` (`id_user`, `first_name`, `middle_name`, `last_name`, `ge
 (12, 'Kaye', 'Kenya', 'Poe', 'Female', '0905', '2354465', 'kk@gmail.com', 'mCyQ2ezu'),
 (13, 'Barney', 'Jollibee', 'Uzumaki', 'Female', '0817', '1242534', 'bj@gmail.com', 'mfiwYLrd'),
 (14, 'Kobe', 'Jordan', 'James', 'Male', '0817', '2354234', 'kj@yahoo.com', 'CyT4wKfN'),
-(15, 'Chopper', 'Ramirez', 'Dela Cruz', 'Female', '0905', '8674533', 'cr@emaill.com', 'p3icn5G4');
+(15, 'Chopper', 'Ramirez', 'Dela Cruz', 'Female', '0905', '8674533', 'cr@emaill.com', 'p3icn5G4'),
+(16, 'Dayet', 'Jan', 'Arellano', 'Male', '0817', '3543223', 'dj@gmail.com', 'lpbzqD5j'),
+(17, 'Brian', 'Andal', 'Maines', 'Male', '0906', '3253453', 'br@gmail.com', 'wKOP2Rxa'),
+(18, 'Dexter', 'Batumbakal', 'De Guzman', 'Male', '0905', '2353463', 'dd@gmail.com', 'q8lZmuiE'),
+(19, 'Mia', 'Reyez', 'Fernando', 'Female', '0817', '2355745', 'mr@gmail.com', 'TdIZGjRH'),
+(20, 'Josh', 'Hernandez', 'Rocafor', 'Male', '0905', '2354325', 'jh@gmail.com', 'Tzs8DjCr'),
+(21, 'Marvin', 'Ten', 'Anastacio', 'Male', '0817', '5679465', 'mt@gmail.com', 'wkRCLWhM'),
+(22, 'Carl', 'Luning', 'Ligaya', 'Male', '0817', '5232345', 'cl@gmail.com', '9aJTUR4W'),
+(23, 'Gian', 'Manalo', 'Tensionado', 'Male', '0813', '4675464', 'gm@gmail.com', 'L7OaCKzy'),
+(24, 'Jade', 'Caluse', 'Baraero', 'Female', '0905', '8945983', 'jc@gmail.com', 'k7vaegbH');
 
 --
 -- Indexes for dumped tables
@@ -78,7 +87,7 @@ ALTER TABLE `tbl_user`
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
