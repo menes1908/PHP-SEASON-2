@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 18, 2025 at 09:39 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Generation Time: Aug 26, 2025 at 05:48 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -44,26 +44,26 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`id_user`, `first_name`, `middle_name`, `last_name`, `gender`, `preffix`, `seven_digit`, `email`, `password`) VALUES
-(1, 'francine', 'tan', 'cruz', 'Female', '0817', '2131231', 'francine@gmail.com', 'pAO9fIER'),
-(2, 'Cris', 'Vidal', 'Hernandez', 'Male', '0813', '2342342', 'cv@gmail.com', 'vnuEraJq'),
-(3, 'Ej', 'Cruz', 'Dimayuga', 'Male', '0817', '8342475', 'e@gmail.com', 'CiHV7QSj'),
-(4, 'Jed', 'Mori', 'Pintor', 'Male', '0905', '8972348', 'j@gmail.com', 'eHfoRgp0'),
-(5, 'Thea', 'Geronimo', 'Reyes', 'Female', '0907', '9012390', 'a@gmail.com', 'JpcYOHkZ'),
-(6, 'Grade', 'Oran', 'Malaluan', 'Male', '0817', '9023549', 'g@gmail.com', 'RUj71J9N'),
-(7, 'Jenylle', 'Buan', 'Tan', 'Female', '0813', '1231243', 'c@gmail.com', 'GiuLfjna'),
-(8, 'Chelsey', 'Ramos', 'Bilog', 'Female', '0907', '5743634', 'cr@gmail.com', 'wke9uEbc'),
-(9, 'Wendell', 'Carter', 'Williams', 'Male', '0813', '1242345', 'ww@hotmail.com', 'EVrMNvG9'),
-(10, 'Yen', 'Keil', 'Nakamura', 'Female', '0906', '2354334', 'yn@gmail.com', 'xSVlQ1WG'),
-(11, 'Ian', 'Merrick', 'Terennal', 'Male', '0906', '2352345', 'im@gmail.com', 'VXjckOIr'),
-(12, 'Kaye', 'Kenya', 'Poe', 'Female', '0905', '2354465', 'kk@gmail.com', 'mCyQ2ezu'),
-(13, 'Barney', 'Jollibee', 'Uzumaki', 'Female', '0817', '1242534', 'bj@gmail.com', 'mfiwYLrd'),
-(14, 'Kobe', 'Jordan', 'James', 'Male', '0817', '2354234', 'kj@yahoo.com', 'CyT4wKfN'),
-(15, 'Chopper', 'Ramirez', 'Dela Cruz', 'Female', '0905', '8674533', 'cr@emaill.com', 'p3icn5G4'),
-(16, 'Dayet', 'Jan', 'Arellano', 'Male', '0817', '3543223', 'dj@gmail.com', 'lpbzqD5j'),
-(17, 'Brian', 'Andal', 'Maines', 'Male', '0906', '3253453', 'br@gmail.com', 'wKOP2Rxa'),
-(18, 'Dexter', 'Batumbakal', 'De Guzman', 'Male', '0905', '2353463', 'dd@gmail.com', 'q8lZmuiE'),
-(19, 'Mia', 'Reyez', 'Fernando', 'Female', '0817', '2355745', 'mr@gmail.com', 'TdIZGjRH'),
-(20, 'Josh', 'Hernandez', 'Rocafor', 'Male', '0905', '2354325', 'jh@gmail.com', 'Tzs8DjCr'),
+(1, 'syn', 'penduko', 'borems', 'Female', '0817', '6846554', 'sp@gmail.com', 'pAO9fIER'),
+(2, 'Carlo', 'Smith', 'George', 'Male', '0813', '5658765', 'cs@gmail.com', 'vnuEraJq'),
+(3, 'Erman', 'takahashi', 'gracia', 'Male', '0817', '0912390', 'et@gmail.com', 'CiHV7QSj'),
+(4, 'renn', 'bautista', 'pastrana', 'Male', '0905', '3454643', 'rb@gmail.com', 'eHfoRgp0'),
+(5, 'gabrielle', 'reyes', 'mendoza', 'Female', '0817', '2356346', 'gr@gmail.com', 'JpcYOHkZ'),
+(6, 'angelus', 'lat', 'rivera', 'Female', '0817', '5892390', 'al@gmail.com', 'RUj71J9N'),
+(7, 'cxyris', 'suarez', 'buan', 'Female', '0906', '8564634', 'csb@gmail.com', 'GiuLfjna'),
+(8, 'stormi', 'soriano', 'santos', 'Male', '0817', '4565234', 'ss@gmail.com', 'wke9uEbc'),
+(9, 'allen', 'valdez', 'kalbo', 'Male', '0813', '5673453', 'av@hotmail.com', 'EVrMNvG9'),
+(10, 'luffy', 'ace', 'sabo', 'Male', '0817', '5684564', 'asl@gmail.com', 'xSVlQ1WG'),
+(11, 'rose', 'isaac', 'newtron', 'Female', '0905', '4546455', 'ri@gmail.com', 'VXjckOIr'),
+(12, 'spongebob', 'patrick', 'squarepants', 'Female', '0817', '0923470', 'sps@gmail.com', 'mCyQ2ezu'),
+(13, 'Naruto', 'Elon', 'tameme', 'Male', '0906', '8546345', 'ne@gmail.com', 'mfiwYLrd'),
+(14, 'stephen', 'chicken', 'chami', 'Male', '0817', '8923590', 'lume@yahoo.com', 'CyT4wKfN'),
+(15, 'junjun', 'ramon', 'velasco', 'Male', '0813', '8902347', 'jr@emaill.com', 'p3icn5G4'),
+(16, 'robin', 'namie', 'sigben', 'Male', '0906', '0923470', 'rn@gmail.com', 'lpbzqD5j'),
+(17, 'super', 'joker', 'man', 'Male', '0906', '5674553', 'sj@gmail.com', 'wKOP2Rxa'),
+(18, 'jamie', 'august', 'matibag', 'Female', '0905', '0912473', 'ja@gmail.com', 'q8lZmuiE'),
+(19, 'sophie', 'malkova', 'khalifa', 'Female', '0906', '9081234', 'sk@gmail.com', 'TdIZGjRH'),
+(20, 'kyla', 'tala', 'sway', 'Female', '0907', '9781230', 'kt@gmail.com', 'Tzs8DjCr'),
 (21, 'Marvin', 'Ten', 'Anastacio', 'Male', '0817', '5679465', 'mt@gmail.com', 'wkRCLWhM'),
 (22, 'Carl', 'Luning', 'Ligaya', 'Male', '0817', '5232345', 'cl@gmail.com', '9aJTUR4W'),
 (23, 'Gian', 'Manalo', 'Tensionado', 'Male', '0813', '4675464', 'gm@gmail.com', 'L7OaCKzy'),
