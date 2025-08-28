@@ -1,6 +1,6 @@
 <?php
-
 include("nav.php");
+
 
 $first_name = $middle_name = $last_name = $gender = $preffix = $seven_digit = $email = "";
 
