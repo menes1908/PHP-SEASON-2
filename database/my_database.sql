@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 26, 2025 at 05:48 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.0.30
+-- Generation Time: Aug 28, 2025 at 09:01 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -44,7 +44,7 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`id_user`, `first_name`, `middle_name`, `last_name`, `gender`, `preffix`, `seven_digit`, `email`, `password`) VALUES
-(1, 'syn', 'penduko', 'borems', 'Female', '0817', '6846554', 'sp@gmail.com', 'pAO9fIER'),
+(1, 'syn', 'penduko', 'borems', 'Female', '0817', '9999999', 'sp@gmail.com', 'pAO9fIER'),
 (2, 'Carlo', 'Smith', 'George', 'Male', '0813', '5658765', 'cs@gmail.com', 'vnuEraJq'),
 (3, 'Erman', 'takahashi', 'gracia', 'Male', '0817', '0912390', 'et@gmail.com', 'CiHV7QSj'),
 (4, 'renn', 'bautista', 'pastrana', 'Male', '0905', '3454643', 'rb@gmail.com', 'eHfoRgp0'),
@@ -61,13 +61,7 @@ INSERT INTO `tbl_user` (`id_user`, `first_name`, `middle_name`, `last_name`, `ge
 (15, 'junjun', 'ramon', 'velasco', 'Male', '0813', '8902347', 'jr@emaill.com', 'p3icn5G4'),
 (16, 'robin', 'namie', 'sigben', 'Male', '0906', '0923470', 'rn@gmail.com', 'lpbzqD5j'),
 (17, 'super', 'joker', 'man', 'Male', '0906', '5674553', 'sj@gmail.com', 'wKOP2Rxa'),
-(18, 'jamie', 'august', 'matibag', 'Female', '0905', '0912473', 'ja@gmail.com', 'q8lZmuiE'),
-(19, 'sophie', 'malkova', 'khalifa', 'Female', '0906', '9081234', 'sk@gmail.com', 'TdIZGjRH'),
-(20, 'kyla', 'tala', 'sway', 'Female', '0907', '9781230', 'kt@gmail.com', 'Tzs8DjCr'),
-(21, 'Marvin', 'Ten', 'Anastacio', 'Male', '0817', '5679465', 'mt@gmail.com', 'wkRCLWhM'),
-(22, 'Carl', 'Luning', 'Ligaya', 'Male', '0817', '5232345', 'cl@gmail.com', '9aJTUR4W'),
-(23, 'Gian', 'Manalo', 'Tensionado', 'Male', '0813', '4675464', 'gm@gmail.com', 'L7OaCKzy'),
-(24, 'Jade', 'Caluse', 'Baraero', 'Female', '0905', '8945983', 'jc@gmail.com', 'k7vaegbH');
+(18, 'jamie', 'august', 'matibag', 'Female', '0905', '0912473', 'ja@gmail.com', 'q8lZmuiE');
 
 --
 -- Indexes for dumped tables
@@ -87,7 +81,7 @@ ALTER TABLE `tbl_user`
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

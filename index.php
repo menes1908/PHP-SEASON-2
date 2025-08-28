@@ -1,5 +1,7 @@
 <?php
 
+include("nav.php");
+
 $first_name = $middle_name = $last_name = $gender = $preffix = $seven_digit = $email = "";
 
 $first_nameErr = $middle_nameErr = $last_nameErr = $genderErr = $preffixErr = $seven_digitErr = $emailErr = "";
@@ -137,6 +139,8 @@ if(isset($_POST["btnRegister"])){
 <form method="POST">
 
     <center>
+
+    <br>
 
         <table border="0" width = "50%">
 
