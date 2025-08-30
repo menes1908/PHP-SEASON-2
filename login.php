@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 include("nav.php");
 
 date_default_timezone_set ("Asia/Manila");
@@ -9,72 +11,71 @@ $notify = $attempt = $log_time = "";
 
 $end_time = date("h:i A", strtotime("+15 minutes", strtotime($time_now)));
 
+
 $email = $password = "";
 $emailErr = $passwordErr = "";
 
 if(isset($_POST["btnLogin"])){
-
-    if(isset($_POST["email"])){
+    // Validate email
+    if(empty($_POST["email"])){
         $emailErr = "Email is required";
-
     }else{
         $email = $_POST["email"];
-
     }
 
-    if(isset($_POST["password"])){
+    // Validate password
+    if(empty($_POST["password"])){
         $passwordErr = "Password is required";
-
     }else{
         $password = $_POST["password"];
-
     }
 
-
-    if($email AND $password){
-
+    // Only proceed if both fields are filled
+    if($email && $password){
         $check_email = mysqli_query($connections, "SELECT * FROM tbl_user WHERE email='$email'");
-        $check_row = mysqli_num_rows($check_username);
+        $check_row = mysqli_num_rows($check_email);
 
         if($check_row > 0){
-
-            $fetch = mysqli_fetch_assoc($check_username);
-
+            $fetch = mysqli_fetch_assoc($check_email);
             $db_password = $fetch["password"];
-
             $db_attempt = $fetch["attempt"];
-
             $db_log_time = strtotime($fetch["log_time"]);
-
             $my_log_time = $fetch["log_time"];
-
             $new_time = strtotime($time_now);
-
             $account_type = $fetch["account_type"];
 
             if($account_type == "1"){
-
-
-            }else{
-
-                if($db_log_time <= $new_time){
-
-
+                if($db_password == $password){
+                    echo "<script>window.location.href='admin';</script>";
                 }else{
-
+                    $passwordErr = "Hi Admin! Your password is incorrect!";
+                }
+            }else{
+                if($db_log_time <= $new_time){
+                    if($db_password == $password){
+                        mysqli_query($connections, "UPDATE tbl_user SET attempt='', log_time='' WHERE email='$email'");
+                        echo "<script>window.location.href='users'</script>";
+                    }else{
+                        $attempt = (int)$db_attempt + 1;
+                        if($attempt >= 3){
+                            $attempt = 3;
+                            mysqli_query($connections, "UPDATE tbl_user SET attempt='$attempt', log_time='$end_time' WHERE email='$email'");
+                            $notify = "You already reach the three(3) times attempt. Please Login after 15 minutes: <b>$end_time</b>";
+                        }else{
+                            mysqli_query($connections, "UPDATE tbl_user SET attempt='$attempt' WHERE email='$email'");
+                            $passwordErr= "Password is incorrect";
+                            $notify = "Login Attempt: <b>$attempt</b>"; 
+                        }
+                    }
+                }else{
                     $notify = "I'm Sorry, You have to wait until: <b>$my_log_time</b> before login";
                 }
-
             }
-
         }else{
-
-
+            $emailErr = "Email is not registered!";
         }
-
     }
-
-}//end of main if
+}
 
 ?>
 
@@ -96,14 +97,17 @@ if(isset($_POST["btnLogin"])){
 
         <br>
 
-        <input type="password" name="password" placeholder="Password" value="<?php echo $password; ?>"><br>
-        <span class="error"><?php echo $passwordErr;?></span>
+        <input type="password" name="password" placeholder="Password" value=""><br>
+        <span class="error"><?php echo $passwordErr; ?></span>
 
         <br>
 
         <input class="btn-primary" type="submit" name="btnLogin" value="Login">
 
         <br>
+
+        <span class="error"><?php echo $notify; ?></span>
+
         <br>
 
         <a href="?forgot=<?php echo md5(rand(1,9)); ?>">Forgot Password? </a>
